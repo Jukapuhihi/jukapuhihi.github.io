@@ -1,0 +1,378 @@
+/* Setup basics CSS */
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:root {
+  /* html */
+  --primary-color: #6bc4a2;
+  --text-color: #848789;
+  --input-border: #d3d7d9;
+  --input-text-color: #cdcdcd;
+  --bg-dark: #282f35;
+  --bg-light: #f7f7f7;
+  --heading-color: #353738;
+  --nav-link: #4d4959;
+}
+html {
+  font-size: 62.5%; /* 1rem = 10px 
+    1rem = 16px; 
+
+  */
+}
+body {
+  font-family: "Lato", sans-serif;
+  line-height: 1; /* 1 == font-size*/
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+a {
+  text-decoration: underline;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+button {
+  cursor: pointer;
+}
+input,
+textarea,
+button {
+  outline: none;
+  box-shadow: none;
+  font-family: "Lato", sans-serif;
+}
+/* Your style start from here */
+/* Yeu cau:
+1. chạy được trên chrome, firefox => flexbox (ko dùng float, inline-block để chia layout)
+2. Trang phải responsive
+3. Viết theo mobile first hay desktop first đều được
+breakpoint: 
+mf: min-width
+  576
+  768
+  992
+  1200
+df: max-width 
+  575
+  767
+  991
+  1199
+*/
+
+.header {
+  text-align: center;
+  min-height: 80rem;
+  background: url('../images/bg_img.jpg') no-repeat center/cover;
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+
+  /* margin-bottom: 11.5rem; */
+}
+/* 
+Sua:
+
+*/
+.nav {
+  display: flex;
+  justify-content: center;
+  padding-top: 3.5rem;
+}
+.nav__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.nav__item {
+  padding: 0 3.5rem;
+  position: relative;
+}
+.nav__item:nth-child(1)::before, .nav__item:nth-child(4)::before {
+  content: ".";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.nav__link {
+  color: var(--nav-link);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.nav__link:hover, .nav__link:active {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.feature__header {
+  padding: 11rem 1.5rem;
+  text-align: center;
+}
+.feature__icon img {
+  margin: 0 auto;
+}
+.feature__heading {
+  text-align: center;
+  color: var(--heading-color);
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 3.5rem;
+}
+.feature__header-desc {
+  max-width: 108rem;
+  margin: auto;
+  color: var(--text-color);
+  font-size: 1.8rem;
+  line-height: 1.9;
+  margin-top: 3rem;
+}
+/* Ket thuc sua */
+
+.header__content {
+  padding-top: 3.5rem;
+  font-size: 1.3rem;
+  display: flex;
+  /* 
+    flex-direction
+    flex-wrap
+  */
+  justify-content: center;
+}
+.header__logo {
+  width: 9.5rem;
+  height: 8.5rem;
+  margin: 0 2rem;
+}
+.header__img {
+  width: 100%;
+  height: 100%;
+}
+.header__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black;
+  padding: 3.5rem 4rem 4rem 4rem;
+}
+.header__para {
+  padding: 3.5rem 0;
+}
+.header__link:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+
+.intro {
+  text-align: center;
+}
+.intro__content {
+  background-color: var(--bg-light);
+}
+.intro__icon {
+  display: inline-block;
+  padding-left: 1.5rem;
+  width: 5.5rem;
+  height: 4.5rem;
+}
+.intro__title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 3rem 0;
+}
+.intro__para {
+  display: inline-block;
+  width: 67.5%;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  line-height: 1.5;
+  padding-bottom: 12rem;
+}
+
+.intro__flex {
+  height: 60rem;
+  display: flex;
+  flex-flow: column wrap;
+  position: relative;
+}
+
+
+.intro__bg1 {
+  height: 100%;
+  width: 66.66%;
+  background-image: url('../images/bg_img1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.intro__bg1 img {
+  display: inline-block;
+  text-align: center;
+  padding-top: 23rem;
+}
+.intro__content-small {
+  height: 66.666%;
+  width: 33.33%;
+  padding-top: 7rem;
+}
+.addbox1:after {
+  display: block;
+  content:'';
+  background-color: white;
+  position: absolute;
+  z-index: 3;
+  top: 65.5%;
+  left: 83.333%;
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+}
+.intro__bg2 {
+  height: 33.333%;
+  width: 33.33%;
+  background-image: url('../images/bg_img2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pr--justify {
+  text-align: justify;
+  width: 70%;
+  padding-bottom: 10rem;
+}
+.title--flex {
+  margin: 2rem 0;
+}
+
+.intro__bg3 {
+  height: 33.333%;
+  width: 33.33%;
+  background-image: url('../images/bg_img3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.intro__bg4 {
+  height: 100%;
+  width: 66.66%;
+  background-image: url('../images/bg_img4.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.intro__bg4 img {
+  display: inline-block;
+  text-align: center;
+  padding-top: 23rem;
+}
+.addbox2:after {
+  display: block;
+  content:'';
+  background-color: white;
+  position: absolute;
+  z-index: 3;
+  top: 65.5%;
+  left: 16.66%;
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+}
+.intro__bg5 {
+  height: 100%;
+  width: 33.33%;
+  background-image: url('../images/bg_img5.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.intro__bg5 img {
+  display: inline-block;
+  text-align: center;
+  padding-top: 23rem;
+}
+.intro__bg6 {
+  height: 33.333%;
+  width: 33.33%;
+  background-image: url('../images/bg_img6.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.intro__bg7 {
+  height: 100%;
+  width: 33.33%;
+  background-image: url('../images/bg_img7.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.addbox3:after {
+  display: block;
+  content:'';
+  background-color: white;
+  position: absolute;
+  z-index: 3;
+  top: 65.5%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 767px) {
+  .nav {
+    position: relative;
+    z-index: 10;
+  }
+  .nav__list {
+    flex-direction: column;
+    transform: translateX(-100vw);
+    transition: transform 0.5s;
+  }
+  .nav__item:nth-child(1)::before, .nav__item:nth-child(4)::before {
+    content: "";
+  }
+  .nav__item:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+  .nav__toggle {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 11;
+  }
+  .nav__icon {
+    height: 5rem;
+    width: 5rem;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .nav__icon i {
+    font-size: 3rem;
+    color: white;
+  }
+  #check {
+    display: none;
+  }
+  .nav #check:checked ~ .nav__list {
+    transform: translateX(0);
+  }
+  .nav__background {
+    background: tomato;
+    height: 2rem;
+    width: 2rem;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    /* border-radius: 50%; */
+    transform: scale(0);
+    transition: transform 0.5s;
+  }
+  .nav #check:checked + .nav__background {
+    transform: scale(50);
+  }
+}
