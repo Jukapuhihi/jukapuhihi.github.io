@@ -548,6 +548,13 @@ df: max-width
   .giveinfo {
     margin-bottom: 13rem;
   }
+  .giveinfo__form {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .giveinfo__btn {
+    margin-left: 0.5rem;
+  }
   .footer {
     flex-flow: column nowrap;
     text-align: center;
